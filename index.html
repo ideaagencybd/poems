@@ -2,7 +2,12 @@
 <html lang="en" data-theme="light">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="A complete, mobile-friendly compendium of poems prescribed for the B.A. (Honours) and MA English programs at the University of Chittagong — with biographies, contexts, full texts, and verified links to authoritative editions.">
+    <meta name="theme-color" content="#7a2e3b" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1a1814" media="(prefers-color-scheme: dark)">
+    <meta name="author" content="University of Chittagong — Department of English">
+    <link rel="preconnect" href="https://www.poetryfoundation.org">
     <title>Poems Compendium: B.A. (Honours) &amp; MA English — University of Chittagong</title>
     <style>
         :root {
@@ -363,6 +368,128 @@
                 color: #000;
             }
         }
+    
+        /* ============ Mobile-responsive & polish ============ */
+        img, svg, video { max-width: 100%; height: auto; }
+        pre, code { white-space: pre-wrap; word-wrap: break-word; overflow-wrap: anywhere; }
+        a { word-break: break-word; overflow-wrap: anywhere; }
+        table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+        /* Tighten poem display on small screens */
+        .poem-text, pre.poem-text {
+            font-size: 1em;
+            line-height: 1.6;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Back-to-top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            z-index: 1000;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 46px;
+            height: 46px;
+            font-size: 1.4em;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            line-height: 1;
+            padding: 0;
+        }
+        .back-to-top.visible { display: flex; }
+        .back-to-top:hover { transform: translateY(-2px); }
+
+        /* Print-friendly */
+        @media print {
+            body { max-width: 100%; padding: 0; background: #fff; color: #000; }
+            .theme-toggle, .back-to-top, #toc, nav { display: none !important; }
+            a { color: #000; text-decoration: underline; }
+            .poem-card, .poem-section, section, article { break-inside: avoid; page-break-inside: avoid; }
+        }
+
+        /* Tablet */
+        @media (max-width: 900px) {
+            body { padding: 22px 18px 60px; max-width: 100%; }
+            h1 { font-size: 1.9em !important; line-height: 1.25; }
+            h2 { font-size: 1.45em !important; }
+            h3 { font-size: 1.2em !important; }
+        }
+
+        /* Phone */
+        @media (max-width: 640px) {
+            body {
+                padding: 16px 14px 80px;
+                font-size: 16px;
+                line-height: 1.65;
+                text-align: left; /* justify reads poorly on narrow screens */
+            }
+            h1 { font-size: 1.6em !important; letter-spacing: 0; }
+            h2 { font-size: 1.25em !important; }
+            h3 { font-size: 1.1em !important; }
+            h4 { font-size: 1.02em !important; }
+            .theme-toggle {
+                top: 10px; right: 10px;
+                width: 38px; height: 38px;
+                font-size: 1.1em;
+            }
+            .back-to-top {
+                bottom: 14px; right: 14px;
+                width: 42px; height: 42px;
+                font-size: 1.2em;
+            }
+            blockquote, .poem-text, pre {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+            }
+            .external-link {
+                display: inline-block;
+                padding: 4px 0;
+                min-height: 32px; /* tap target */
+            }
+            ul, ol { padding-left: 22px; }
+            html { scroll-padding-top: 60px; }
+        }
+
+        /* Very small phones */
+        @media (max-width: 380px) {
+            body { padding: 12px 10px 80px; font-size: 15px; }
+            h1 { font-size: 1.4em !important; }
+            .poem-text { font-size: 0.95em; }
+        }
+
+        /* Reduce motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+            html { scroll-behavior: auto; }
+        }
+
+        /* Better focus for keyboard users */
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--accent2);
+            outline-offset: 2px;
+            border-radius: 3px;
+        }
+
+        /* External-link tap-friendly styling */
+        .external-link {
+            display: inline-block;
+            padding: 2px 0;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+        }
+
     </style>
 </head>
 <body>
@@ -467,6 +594,12 @@
             <li>Child Ballad #79 in Francis James Child's collection.</li>
             <li>"Usher" likely refers to a place name in Scotland.</li>
             <li>The birch hats signify the sons are spirits — birch grows at the gates of Paradise in folklore.</li>
+        
+            <li>Full text: <a href="https://www.bartleby.com/lit-hub/library/poem/the-wife-of-ushers-well/" target="_blank" rel="noopener" class="external-link">→ Read the ballad at Bartleby</a></li>
+        
+            <li>Catalogued as Child Ballad No. 79 in F. J. Child's <em>The English and Scottish Popular Ballads</em> (1882–98).</li>
+            <li>First printed in Walter Scott's <em>Minstrelsy of the Scottish Border</em> (1802) from a Border-country oral source.</li>
+            <li>The mysterious "birk" (birch) the dead sons wear is, in folk belief, the tree of the dead — a motif shared with Scandinavian and Greek myth.</li>
         </ul>
     </div>
 
@@ -497,6 +630,8 @@
             <li>Part of the Fair Youth sequence (Sonnets 1–126).</li>
             <li>Uses "three winters cold" imagery — marking roughly three years of friendship.</li>
             <li>The closing couplet warns future ages that true beauty died before they were born.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/50387/sonnet-104-to-me-fair-friend-you-never-can-be-old" target="_blank" rel="noopener" class="external-link">→ Read Sonnet 104 at Poetry Foundation</a></li>
         </ul>
     </div>
 
@@ -536,6 +671,8 @@
             <li>Often considered Donne's first great love lyric.</li>
             <li>References the legend of the Seven Sleepers of Ephesus.</li>
             <li>Pioneer of the metaphysical conceit — the lovers' faces reflected in each other's eyes become perfect hemispheres.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/44104/the-good-morrow" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
         </ul>
     </div>
 
@@ -579,6 +716,12 @@
             <li>Inspired by his sister Dorothy's journal entry from 15 April 1802.</li>
             <li>One of the most famous poems in the English language.</li>
             <li>The "inward eye" phrase has become proverbial for the power of imagination.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/45521/i-wandered-lonely-as-a-cloud" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>The poem was inspired by daffodils Wordsworth and his sister Dorothy saw at Glencoyne Bay, Ullswater, on 15 April 1802.</li>
+            <li>Dorothy's prose journal entry of that day — "I never saw daffodils so beautiful" — supplied many of the poem's images two years before William wrote it.</li>
+            <li>Originally published in 1807 in <em>Poems, in Two Volumes</em>; the famous fourth stanza ("They flash upon that inward eye…") was added in the 1815 revision, suggested by Wordsworth's wife Mary.</li>
         </ul>
     </div>
 
@@ -630,6 +773,12 @@
             <li>Written after a walk near Winchester on 19 September 1819.</li>
             <li>Keats's last great ode — he died of tuberculosis just 17 months later.</li>
             <li>Often considered the most nearly perfect short poem in English.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/44484/to-autumn" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Composed in a single afternoon, 19 September 1819, after a walk near Winchester.</li>
+            <li>Keats's last completed major poem; he died sixteen months later in Rome aged 25.</li>
+            <li>Three perfect 11-line stanzas — eleven lines, not the standard ten of his other 1819 odes — give the poem its uniquely sustained, unhurried rhythm.</li>
         </ul>
     </div>
 
@@ -718,6 +867,12 @@
             <li>Written shortly after the death of Tennyson's dear friend Arthur Hallam.</li>
             <li>A dramatic monologue — Ulysses speaks in his own voice throughout.</li>
             <li>The final line is one of the most quoted in English literature.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/45392/ulysses" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Written in October 1833, three weeks after Tennyson learned of the death of his friend Arthur Henry Hallam.</li>
+            <li>The closing line — "To strive, to seek, to find, and not to yield" — is inscribed on a wooden cross at Observation Hill, Antarctica, marking Robert Falcon Scott's lost polar party (1913).</li>
+            <li>Drew on both Homer's <em>Odyssey</em> XI and Dante's <em>Inferno</em> XXVI, where Ulysses is damned for his restless voyaging.</li>
         </ul>
     </div>
 
@@ -790,6 +945,12 @@
             <li>Based on Alfonso II d'Este, Duke of Ferrara (1533–1598), whose young wife Lucrezia died suspiciously.</li>
             <li>A model dramatic monologue — the Duke reveals far more than he intends.</li>
             <li>The unspoken horror (that he had her murdered) is what makes the poem so chilling.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/43768/my-last-duchess" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Loosely based on Alfonso II d'Este, Duke of Ferrara (1533–1598), and his first wife Lucrezia de' Medici, who died at 17 in suspicious circumstances.</li>
+            <li>"Frà Pandolf" and "Claus of Innsbruck" are fictitious artists invented by Browning.</li>
+            <li>Originally titled simply "Italy" when published in <em>Dramatic Lyrics</em> (1842).</li>
         </ul>
     </div>
 
@@ -820,6 +981,12 @@
             <li>Inspired by hearing a fountain in a London shop window — Yeats was homesick for Sligo.</li>
             <li>Yeats said it was the first poem written in his own authentic voice.</li>
             <li>Innisfree means "Heather Island" in Irish.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/43281/the-lake-isle-of-innisfree" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Innisfree is a real, uninhabited island on Lough Gill, County Sligo, Ireland.</li>
+            <li>Yeats said the line "I will arise and go now" came to him on a London street as he watched a small ball balanced on a jet of water in a shop window — sparking memories of home.</li>
+            <li>Read by the poet himself in 1937 — the recording survives and is one of the earliest known recordings of Yeats's voice.</li>
         </ul>
     </div>
 
@@ -855,6 +1022,12 @@
             <li>Frost wrote it in a few minutes after working all night on a longer poem.</li>
             <li>The repeated final couplet is one of the most iconic endings in poetry.</li>
             <li>Often interpreted as a meditation on death — "sleep" as the final rest.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/42891/stopping-by-woods-on-a-snowy-evening" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Frost wrote it in a single sitting on the morning of 22 June 1922, after working through the night on a long poem.</li>
+            <li>He called it "my best bid for remembrance."</li>
+            <li>The repeated final couplet — "And miles to go before I sleep" — was added on revision; in the first draft, the poem ended with a single line.</li>
         </ul>
     </div>
 
@@ -965,6 +1138,8 @@
             <li>Written days after Yeats's death on 28 January 1939.</li>
             <li>The phrase "poetry makes nothing happen" is one of the most debated lines in modern poetics.</li>
             <li>Auden later revised and cut some political stanzas from Section II.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/161870/in-memory-of-w-b-yeats" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
         </ul>
     </div>
 
@@ -1050,6 +1225,12 @@
             <li>From <em>The Less Deceived</em> (1955), Larkin's breakthrough collection.</li>
             <li>Larkin himself was a committed atheist.</li>
             <li>The title puns on "going to church" and the "going" (disappearing) of churches.</li>
+        
+            <li>Full text: <a href="https://allpoetry.com/Church-Going" target="_blank" rel="noopener" class="external-link">→ Read full text at AllPoetry</a></li>
+        
+            <li>Written between April and July 1954 after Larkin cycled to a derelict country church in County Clare while on holiday in Ireland.</li>
+            <li>The opening word "Once" is famously deceptive: the speaker visits churches habitually.</li>
+            <li>Larkin's notebook shows seventeen drafts of the closing stanza.</li>
         </ul>
     </div>
 
@@ -1090,6 +1271,12 @@
             <li>From Hughes's first collection <em>The Hawk in the Rain</em>.</li>
             <li>A companion poem "Second Glance at a Jaguar" came later.</li>
             <li>This is Hughes's signature animal poem, embodying his fascination with primal energy.</li>
+        
+            <li>Full text: <a href="https://allpoetry.com/poem/8602671-The-Jaguar-by-Ted-Hughes" target="_blank" rel="noopener" class="external-link">→ Read full text at AllPoetry</a></li>
+        
+            <li>Hughes wrote it after a visit to London Zoo's Regent's Park enclosure in the early 1950s.</li>
+            <li>Often paired in classrooms with Rilke's "Der Panther" (1903), to which it is a kind of muscular, English answer.</li>
+            <li>First published in <em>The Hawk in the Rain</em> (1957), Hughes's debut collection, which won the New York Poetry Center First Publication Award.</li>
         </ul>
     </div>
 
@@ -1144,6 +1331,12 @@
             <li>Opening poem of <em>Death of a Naturalist</em>, Heaney's debut collection.</li>
             <li>Heaney won the Nobel Prize in Literature in 1995.</li>
             <li>One of the most famous poems about poetic vocation ever written.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/47555/digging" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>The opening poem of <em>Death of a Naturalist</em> (1966), Heaney's first full collection.</li>
+            <li>The "squat pen" / "snug as a gun" simile was written, Heaney later said, in the violent atmosphere of late-1960s Northern Ireland.</li>
+            <li>Heaney's father Patrick was a cattle-dealer and farmer in County Derry; his grandfather cut turf on Toner's Bog — both appear in the poem.</li>
         </ul>
     </div>
 
@@ -1174,10 +1367,16 @@
             <li>Written when Rich was 21 and a student at Radcliffe College.</li>
             <li>From her debut collection <em>A Change of World</em> (1951), which W. H. Auden selected for the Yale Younger Poets Prize.</li>
             <li>Rich later said the poem expressed feminist feelings she could not yet name openly.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/46606/aunt-jennifers-tigers" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Written in 1951 when Adrienne Rich was 21 and still a Radcliffe student.</li>
+            <li>Published in her debut volume <em>A Change of World</em> (1951), chosen by W. H. Auden for the Yale Younger Poets Prize.</li>
+            <li>Rich later said the formal restraint of the poem was a mask: "I was looking at the wedding band on my own hand."</li>
         </ul>
     </div>
 
-    <a href="#toc" class="back-to-top">↑ Back to Top</a>
+    <a href="#toc" class="section-top-link">↑ Back to top</a>
     <div class="divider">◆</div>
 
     <!-- ============ SECOND YEAR ============ -->
@@ -1551,6 +1750,12 @@
             <li>Coleridge claimed the poem came to him in an opium-induced dream.</li>
             <li>Composition was reportedly interrupted by "a person on business from Porlock" — a phrase now proverbial for unwelcome interruptions.</li>
             <li>Subtitled "A Vision in a Dream. A Fragment."</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/43991/kubla-khan" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Coleridge claimed it came to him in an opium-induced dream of 200–300 lines, of which only 54 survived after he was interrupted by "a person on business from Porlock."</li>
+            <li>Unpublished for 19 years; finally printed in 1816 at the urging of Lord Byron.</li>
+            <li>The "sacred river Alph" likely echoes the Greek Alpheus, which legend said flowed underground beneath the sea.</li>
         </ul>
     </div>
 
@@ -1666,6 +1871,12 @@
             <li>Conceived in a wood near Florence on a stormy autumn day.</li>
             <li>Uses a Dantean <em>terza rima</em> rhyme scheme (ABA BCB CDC...).</li>
             <li>The closing line — "If Winter comes, can Spring be far behind?" — is one of the most famous rhetorical questions in poetry.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/45134/ode-to-the-west-wind" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Composed in the woods near Florence on 25 October 1819, during "a violent tempest" Shelley witnessed on the banks of the Arno.</li>
+            <li>Built from five sonnets in <em>terza rima</em> — Dante's stanza form, used here for the first time on this scale in English.</li>
+            <li>The closing prophecy, "If Winter comes, can Spring be far behind?", is among the most quoted lines of English Romanticism.</li>
         </ul>
     </div>
 
@@ -1798,6 +2009,12 @@
             <li>The first of Keats's great 1819 odes, written in late April.</li>
             <li>Keats said he took more pains with it than with any other poem.</li>
             <li>Psyche was a mortal woman deified after completing trials set by Venus — Keats treats her as the goddess of the soul.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/44480/ode-to-psyche" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Keats called it the first poem he had taken "even moderate pains with" — his earlier work, he said, was "written in a hurry."</li>
+            <li>Psyche, a late addition to the Greek pantheon, had no ancient temples — Keats vows in the poem to build her one in his own mind.</li>
+            <li>Composed in late April 1819, opening Keats's miraculous spring of odes.</li>
         </ul>
     </div>
 
@@ -1901,6 +2118,12 @@
             <li>Reportedly written under a plum tree at Hampstead in a single morning.</li>
             <li>Keats had recently nursed his dying brother Tom through tuberculosis.</li>
             <li>The poem contains some of the most famous lines in English: "tender is the night," "magic casements," "faery lands forlorn."</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/44479/ode-to-a-nightingale" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Reputedly composed in a single morning under a plum tree in the garden of Wentworth Place, Hampstead, in May 1819.</li>
+            <li>Keats was 23; his brother Tom had died of tuberculosis four months earlier — the disease that would kill Keats himself.</li>
+            <li>The manuscript, scribbled on scraps of paper, was rescued by Keats's friend Charles Brown and is now at the Fitzwilliam Museum, Cambridge.</li>
         </ul>
     </div>
 
@@ -1971,10 +2194,16 @@
             <li>The urn is likely a composite of several Greek artifacts, not a single real vase.</li>
             <li>The closing aphorism has provoked endless critical debate — T. S. Eliot called it "a serious blemish."</li>
             <li>The poem is a prime example of <em>ekphrasis</em> — poetry describing a work of visual art.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/44477/ode-on-a-grecian-urn" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>No single urn inspired the poem; Keats fused the Sosibios Vase, the Townley Vase, and the Elgin Marbles he sketched at the British Museum.</li>
+            <li>T. S. Eliot called the closing "Beauty is truth, truth beauty" couplet "a serious blemish on a beautiful poem."</li>
+            <li>Composed in May 1819, in the same astonishing four-month burst that produced "Nightingale," "Psyche," "Melancholy," and "Indolence."</li>
         </ul>
     </div>
 
-    <a href="#toc" class="back-to-top">↑ Back to Top</a>
+    <a href="#toc" class="section-top-link">↑ Back to top</a>
     <div class="divider">◆</div>
 
     <!-- ============ THIRD YEAR - ENG 301 ============ -->
@@ -2005,6 +2234,8 @@
             <li>From Walcott's first collection, written when he was about 18.</li>
             <li>Title alludes to the Book of Revelation — St John wrote it while exiled on the island of Patmos.</li>
             <li>Walcott won the Nobel Prize in Literature in 1992.</li>
+        
+            <li>Full text: <a href="https://jpellegrino.com/teaching/walcott-2.html" target="_blank" rel="noopener" class="external-link">→ Read full text (J. Pellegrino archive)</a></li>
         </ul>
     </div>
 
@@ -2044,6 +2275,12 @@
             <li>From the collection <em>In a Green Night</em>.</li>
             <li>One of the most famous postcolonial poems in English.</li>
             <li>The closing line echoes a question that haunts the entire text — an unanswerable dilemma.</li>
+        
+            <li>Full text: <a href="https://poets.org/poem/far-cry-africa" target="_blank" rel="noopener" class="external-link">→ Read at Poets.org</a></li>
+        
+            <li>Responds to the Mau Mau Uprising in colonial Kenya (1952–60), in which an estimated 11,000 Kikuyu and 32 European settlers were killed.</li>
+            <li>Walcott was of mixed African and European descent: "I who am poisoned with the blood of both, / Where shall I turn, divided to the vein?"</li>
+            <li>First collected in <em>In a Green Night</em> (1962), the volume that established Walcott's international reputation.</li>
         </ul>
     </div>
 
@@ -2074,6 +2311,8 @@
             <li>Title poem of his 1969 collection.</li>
             <li>Written during the height of the U.S. civil rights era.</li>
             <li>The Gulf becomes a powerful metaphor for racial and cultural division.</li>
+        
+            <li>Full text: <a href="https://allpoetry.com/poem/14327967-The-Gulf-by-Derek-Walcott" target="_blank" rel="noopener" class="external-link">→ Read at AllPoetry</a></li>
         </ul>
     </div>
 
@@ -2099,6 +2338,8 @@
             <li>From <em>The Castaway and Other Poems</em>.</li>
             <li>Jazz becomes a prophetic, communal voice bridging Africa and the Caribbean.</li>
             <li>Reflects Walcott's lifelong dialogue with African-American culture.</li>
+        
+            <li>Full text: <a href="https://allpoetry.com/poem/14327966-The-Glory-Trumpeter-by-Derek-Walcott" target="_blank" rel="noopener" class="external-link">→ Read at AllPoetry</a></li>
         </ul>
     </div>
 
@@ -2127,6 +2368,12 @@
             <li>From <em>In a Green Night</em>.</li>
             <li>Carries an epigraph from Sir Thomas Browne's <em>Urn Burial</em>.</li>
             <li>Walcott called colonialism a "tangled root" — impossible to fully excise.</li>
+        
+            <li>Full text: <a href="https://allpoetry.com/poem/14327963-Ruins-Of-A-Great-House-by-Derek-Walcott" target="_blank" rel="noopener" class="external-link">→ Read at AllPoetry</a></li>
+        
+            <li>Epigraph quotes Sir Thomas Browne's <em>Urn Burial</em> (1658): "though our longest sun sets at right declensions…"</li>
+            <li>The "Great House" is the abandoned plantation manor of Walcott's native St Lucia — symbol of slavery and the colonial Caribbean.</li>
+            <li>Closes with the Donne allusion "as well as if a manor of thy friend's," reconciling the poet to a shared, violent past.</li>
         </ul>
     </div>
 
@@ -2195,6 +2442,12 @@
             <li>From the collection <em>The Exact Name</em>.</li>
             <li>Ezekiel is often called the father of modern Indian English poetry.</li>
             <li>Widely taught in South Asian schools and universities.</li>
+        
+            <li>Full text: <a href="https://allpoetry.com/Night-of-the-Scorpion" target="_blank" rel="noopener" class="external-link">→ Read at AllPoetry</a></li>
+        
+            <li>Drawn from a real childhood memory: Ezekiel's mother was stung by a scorpion at their home in Bombay (now Mumbai).</li>
+            <li>The poem juxtaposes peasant superstition (chants, prayers, holy oil) with the rationalist father — and a mother who simply says, "Thank God the scorpion picked on me / and spared my children."</li>
+            <li>Often cited as the founding poem of post-Independence Indian English poetry.</li>
         </ul>
     </div>
 
@@ -2224,6 +2477,8 @@
             <li>Reflects Ezekiel's Bene Israel Jewish background and Bombay (Mumbai) milieu.</li>
             <li>Pioneers a self-deprecating Indian English voice.</li>
             <li>Often paired with "Background, Casually" as autobiographical companion pieces.</li>
+        
+            <li>Full text: <a href="https://www.poemhunter.com/poem/case-study/" target="_blank" rel="noopener" class="external-link">→ Read at PoemHunter</a></li>
         </ul>
     </div>
 
@@ -2260,6 +2515,8 @@
             <li>One of Ezekiel's most quoted poems.</li>
             <li>Concludes with a firm commitment to remain in India — a declaration of belonging.</li>
             <li>A key text of Indian English modernism.</li>
+        
+            <li>Full text: <a href="https://allpoetry.com/poem/12161324-Background--Casually-by-Nissim-Ezekiel-by-Shashank-Chander" target="_blank" rel="noopener" class="external-link">→ Read at AllPoetry</a></li>
         </ul>
     </div>
 
@@ -2293,6 +2550,8 @@
             <li>Das wrote in both English and Malayalam (under the name Madhavikutty).</li>
             <li>She converted to Islam in 1999, taking the name Kamala Surayya.</li>
             <li>A pioneer of feminist Indian English poetry.</li>
+        
+            <li>Full text: <a href="https://www.poemhunter.com/poem/nani/" target="_blank" rel="noopener" class="external-link">→ Read at PoemHunter</a></li>
         </ul>
     </div>
 
@@ -2319,6 +2578,8 @@
             <li><em>Summer in Calcutta</em> (1965) launched Das's career.</li>
             <li>Das was nominated for the Nobel Prize in Literature in 1984.</li>
             <li>Renowned for her confessional candor, rare among Indian women writers of her time.</li>
+        
+            <li>Full text: <a href="https://www.poemhunter.com/poem/summer-in-calcutta/" target="_blank" rel="noopener" class="external-link">→ Read at PoemHunter</a></li>
         </ul>
     </div>
 
@@ -2346,6 +2607,8 @@
             <li>Haq is a Bangladeshi 1971 Liberation War veteran and English professor at ULAB.</li>
             <li>Writes primarily in English, rare among Bangladeshi poets.</li>
             <li>His mentors include Nissim Ezekiel and the British poet Jon Stallworthy.</li>
+        
+            <li>Full text: <a href="https://www.poemhunter.com/poem/civil-service-romance/" target="_blank" rel="noopener" class="external-link">→ Read at PoemHunter</a></li>
         </ul>
     </div>
 
@@ -2374,10 +2637,16 @@
             <li>Widely anthologized in South Asian English poetry collections.</li>
             <li>A self-conscious Bangladeshi response to Keats's "Ode on a Grecian Urn" — celebrating the local over the classical.</li>
             <li>Performed by Haq at international poetry festivals to great acclaim.</li>
+        
+            <li>Full text: <a href="https://www.thedailystar.net/news-detail-2081" target="_blank" rel="noopener" class="external-link">→ Read at The Daily Star (original publication)</a></li>
+        
+            <li>First published in <em>The Daily Star</em> (Dhaka), 31 August 2007, with a dedication "for Baby and Shawkat Osman."</li>
+            <li>Modelled on Whitman's catalogues — Haq addresses "Grandpa Walt" directly.</li>
+            <li>A rare poem to defend the lungi, the unstitched waist-cloth worn across South and Southeast Asia, against the social prejudice that codes it as "low-class."</li>
         </ul>
     </div>
 
-    <a href="#toc" class="back-to-top">↑ Back to Top</a>
+    <a href="#toc" class="section-top-link">↑ Back to top</a>
     <div class="divider">◆</div>
 
     <!-- ============ THIRD YEAR - ENG 304 ============ -->
@@ -2501,6 +2770,12 @@
             <li>Donne later became Dean of St Paul's Cathedral.</li>
             <li>Recited at countless funerals and memorials.</li>
             <li>Provided the title for John Gunther's memoir <em>Death Be Not Proud</em> (1949).</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/44107/holy-sonnets-death-be-not-proud" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>One of Donne's nineteen <em>Holy Sonnets</em>, mostly written 1609–10 in a period of personal crisis after his wife Anne's miscarriages.</li>
+            <li>Published posthumously in 1633.</li>
+            <li>Inspired the title of John Gunther's bestselling 1949 memoir of his son's death.</li>
         </ul>
     </div>
 
@@ -2549,6 +2824,12 @@
             <li>A reverse aubade — a dawn-poem that refuses to part.</li>
             <li>Declares the beloved to be "all states" and the lover "all princes" — the bedroom as the entire cosmos.</li>
             <li>Showcases Donne's bold direct address and the metaphysical swagger.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/44129/the-sun-rising" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>An <em>aubade</em> — a dawn poem in which lovers complain that morning has come too soon.</li>
+            <li>Probably written 1602–05, around Donne's secret marriage to Anne More, which cost him his job and nearly his liberty.</li>
+            <li>Closes with one of poetry's grandest hyperboles: the lovers' bedroom is the centre of the universe — "This bed thy centre is, these walls, thy sphere."</li>
         </ul>
     </div>
 
@@ -2604,6 +2885,8 @@
             <li>Source of Cleanth Brooks's New Critical essay in <em>The Well Wrought Urn</em> (1947).</li>
             <li>Coins the union of soul-mates as a "phoenix" — two beings merging into one.</li>
             <li>Mixes legal, religious, and erotic vocabularies in a tour de force of wit.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/44097/the-canonization" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
         </ul>
     </div>
 
@@ -2664,6 +2947,8 @@
             <li>Reportedly written for his wife Anne before a 1611 trip to France.</li>
             <li>The compass image is the most famous of all metaphysical conceits.</li>
             <li>Anne Donne died in 1617 at age 33, devastating Donne.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/44131/a-valediction-forbidding-mourning" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
         </ul>
     </div>
 
@@ -2728,6 +3013,12 @@
             <li>Built as a three-part syllogism: if—but—therefore.</li>
             <li>Influenced T. S. Eliot's "The Love Song of J. Alfred Prufrock."</li>
             <li>Published posthumously by Marvell's housekeeper.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/44688/to-his-coy-mistress" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>The most famous English <em>carpe diem</em> poem after Herrick's "To the Virgins."</li>
+            <li>Marvell's "vegetable love" once meant "slow-growing" — modern misreadings have tried to make it culinary.</li>
+            <li>Unpublished in his lifetime; first printed in <em>Miscellaneous Poems</em> (1681) by his housekeeper Mary Palmer, who claimed (probably falsely) to be Marvell's widow.</li>
         </ul>
     </div>
 
@@ -2783,6 +3074,8 @@
             <li>Uses geometric conceits — parallel lines and opposite poles — to figure impossible love.</li>
             <li>Among the most metaphysical of Marvell's lyrics.</li>
             <li>Treats love as an abstract philosophical proposition rather than a flesh-and-blood romance.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/44679/the-definition-of-love" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
         </ul>
     </div>
 
@@ -2822,10 +3115,12 @@
             <li>The poem cuts off mid-debate, leaving the question unresolved.</li>
             <li>Revives a medieval debate genre (the <em>conflictus</em>).</li>
             <li>Sometimes paired with Marvell's "On a Drop of Dew" as a meditation on the soul's entrapment.</li>
+        
+            <li>Full text: <a href="https://en.wikisource.org/wiki/The_Dialog_Between_the_Soul_and_Body" target="_blank" rel="noopener" class="external-link">→ Read full text at Wikisource</a></li>
         </ul>
     </div>
 
-    <a href="#toc" class="back-to-top">↑ Back to Top</a>
+    <a href="#toc" class="section-top-link">↑ Back to top</a>
     <div class="divider">◆</div>
 
     <!-- ============ THIRD YEAR - ENG 305 ============ -->
@@ -2898,6 +3193,10 @@
             <li>A 12-book epic in conscious imitation of Virgil's <em>Aeneid</em>.</li>
             <li>"Better to reign in Hell, than serve in Heav'n" is one of the most quoted lines in English.</li>
             <li>Full text: <a href="https://www.gutenberg.org/ebooks/20" target="_blank" rel="noopener" class="external-link">→ Read complete epic at Project Gutenberg</a></li>
+        
+            <li>Milton was completely blind by 1652 and dictated the entire epic to amanuenses, including his daughters.</li>
+            <li>Sold to publisher Samuel Simmons in 1667 for £5 down (and another £5 if 1,300 copies sold).</li>
+            <li>Originally ten books (1667); recast into the now-standard twelve in the 1674 second edition.</li>
         </ul>
     </div>
 
@@ -2928,6 +3227,10 @@
             <li>Sparked by a personal feud with Thomas Shadwell.</li>
             <li>Coined the mock-coronation form that influenced Pope's <em>Dunciad</em>.</li>
             <li>Full text: <a href="https://www.poetryfoundation.org/poems/44180/mac-flecknoe" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Targets Thomas Shadwell, the Whig dramatist who succeeded Dryden himself as Poet Laureate in 1689.</li>
+            <li>Circulated in manuscript for years; printed without authorisation in 1682, then in Dryden's <em>Miscellany</em> (1684).</li>
+            <li>Pope's <em>The Dunciad</em> (1728) is the direct heir of this mock-coronation form.</li>
         </ul>
     </div>
 
@@ -2974,6 +3277,10 @@
             <li>Pope hoped to laugh the families into reconciliation — it worked.</li>
             <li>Introduced Rosicrucian sylphs as a mock-epic supernatural machinery.</li>
             <li>Full text: <a href="https://www.gutenberg.org/ebooks/9800" target="_blank" rel="noopener" class="external-link">→ Read at Project Gutenberg</a></li>
+        
+            <li>Sparked by a real incident: Robert, Lord Petre, snipped a curl from Arabella Fermor's head at a society gathering.</li>
+            <li>First published in two cantos (1712), then expanded to five with the addition of the sylph machinery (1714).</li>
+            <li>Reportedly written, Pope said, "to laugh the two Families into Reconcilement" — and it worked.</li>
         </ul>
     </div>
 
@@ -3037,10 +3344,14 @@
             <li>Provided titles for Hardy's <em>Far from the Madding Crowd</em> and Kubrick's <em>Paths of Glory</em>.</li>
             <li>"Full many a flower is born to blush unseen" is one of the most quoted lines in English poetry.</li>
             <li>Full text: <a href="https://www.poetryfoundation.org/poems/44299/elegy-written-in-a-country-churchyard" target="_blank" rel="noopener" class="external-link">→ Read complete poem at Poetry Foundation</a></li>
+        
+            <li>Composed over eight years in the churchyard of Stoke Poges, Buckinghamshire, where Gray was eventually buried in 1771.</li>
+            <li>On the night before storming the Heights of Abraham (1759), General James Wolfe is said to have recited it and remarked, "Gentlemen, I would rather have written that poem than take Quebec tomorrow."</li>
+            <li>Coined three phrases now embedded in English: "the paths of glory," "far from the madding crowd," and "some mute inglorious Milton."</li>
         </ul>
     </div>
 
-    <a href="#toc" class="back-to-top">↑ Back to Top</a>
+    <a href="#toc" class="section-top-link">↑ Back to top</a>
     <div class="divider">◆</div>
 
     <!-- ============ FOURTH YEAR - ENG 401 ============ -->
@@ -3085,6 +3396,10 @@
             <li>Based on Book IX of Homer's <em>Odyssey</em>.</li>
             <li>The choric song was added in the 1842 revision — it imitates Greek tragedy.</li>
             <li>Full text: <a href="https://www.poetryfoundation.org/poems/45364/the-lotos-eaters" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>First published in <em>Poems</em> (1832), substantially revised for 1842.</li>
+            <li>The "Choric Song" (added in 1842) is built in five Spenserian stanzas of varied length.</li>
+            <li>Tennyson visited the Pyrenees with his Cambridge friend Arthur Hallam in 1830; the lush, languid setting fed directly into the poem.</li>
         </ul>
     </div>
 
@@ -3131,6 +3446,8 @@
             <li>Companion piece to "Ulysses" — both prompted by Hallam's death.</li>
             <li>Tennyson called it "originally a pendent to the Ulysses."</li>
             <li>In Greek myth, Tithonus was a Trojan prince loved by Eos (Aurora/Dawn).</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/45389/tithonus" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
         </ul>
     </div>
 
@@ -3172,6 +3489,10 @@
             <li>Source of the proverbial line "'Tis better to have loved and lost / Than never to have loved at all."</li>
             <li>Written in the "In Memoriam stanza" — iambic tetrameter ABBA quatrains.</li>
             <li>Full text: <a href="https://www.gutenberg.org/ebooks/860" target="_blank" rel="noopener" class="external-link">→ Read at Project Gutenberg</a></li>
+        
+            <li>Took 17 years (1833–50) to compose, in response to Hallam's sudden death at 22.</li>
+            <li>Comprises 133 sections in iambic tetrameter ABBA quatrains — a stanza so original it was named the "In Memoriam stanza."</li>
+            <li>Queen Victoria, mourning Prince Albert, called it her greatest comfort after the Bible.</li>
         </ul>
     </div>
 
@@ -3211,6 +3532,10 @@
             <li>Based on Vasari's <em>Lives of the Artists</em> — Andrea del Sarto (1486–1530) was called "the faultless painter."</li>
             <li>"A man's reach should exceed his grasp, / Or what's a heaven for?" is one of Browning's most quoted lines.</li>
             <li>Full text: <a href="https://www.poetryfoundation.org/poems/43746/andrea-del-sarto" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Commissioned in 1853 by Browning's friend John Kenyon, who wanted a copy of Andrea's <em>Portrait with His Wife</em> in the Pitti Palace; Browning sent the poem instead.</li>
+            <li>Andrea's wife Lucrezia ("my serpentining beauty") was historically accused of pulling him away from greater achievements at the French court.</li>
+            <li>"Less is more" — used here in line 78 — became famous as the slogan of architect Mies van der Rohe.</li>
         </ul>
     </div>
 
@@ -3242,6 +3567,8 @@
             <li>Set in Renaissance Italy among humanist scholars.</li>
             <li>The poem honors painstaking philological labor — the grammarian devoted his life to the smallest particles of Greek.</li>
             <li>Browning admired such "incomplete" but heroic lives.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/43757/a-grammarians-funeral" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
         </ul>
     </div>
 
@@ -3329,6 +3656,12 @@
             <li>Possibly written on Arnold's honeymoon — a strikingly dark wedding poem.</li>
             <li>The closing image of "ignorant armies" clashing by night inspired motifs in Ian McEwan's novel <em>Saturday</em>.</li>
             <li>One of the most anthologized Victorian poems.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/43588/dover-beach" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Probably written on Arnold's honeymoon in June 1851 at the Lord Warden Hotel, overlooking the Channel.</li>
+            <li>First published 16 years later in <em>New Poems</em> (1867).</li>
+            <li>The "Sea of Faith" stanza is one of the central documents of the Victorian crisis of religious belief.</li>
         </ul>
     </div>
 
@@ -3404,6 +3737,8 @@
             <li>Often read as a parable of seduction and abandonment.</li>
             <li>Collected in <em>Goblin Market and Other Poems</em> (1862).</li>
             <li>Christina was the sister of painter-poet Dante Gabriel Rossetti.</li>
+        
+            <li>Full text: <a href="https://poets.org/poem/apple-gathering" target="_blank" rel="noopener" class="external-link">→ Read at Poets.org</a></li>
         </ul>
     </div>
 
@@ -3441,6 +3776,8 @@
             <li>Originally titled "Nonsense" — showing Rossetti's playful, witty side.</li>
             <li>A subtle defense of feminine reserve and privacy.</li>
             <li>Demonstrates Rossetti's range beyond the somber religious poetry she is best known for.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/146807/winter-my-secret" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
         </ul>
     </div>
 
@@ -3470,10 +3807,12 @@
             <li>One of Rossetti's last poems — she died of cancer in December 1894.</li>
             <li>Published posthumously by her brother William Michael Rossetti.</li>
             <li>The poem is a <em>rondeau</em> or rondeau-like form, with the refrain "Sleeping at last."</li>
+        
+            <li>Full text: <a href="https://allpoetry.com/Sleeping-at-last" target="_blank" rel="noopener" class="external-link">→ Read full text at AllPoetry</a></li>
         </ul>
     </div>
 
-    <a href="#toc" class="back-to-top">↑ Back to Top</a>
+    <a href="#toc" class="section-top-link">↑ Back to top</a>
     <div class="divider">◆</div>
 
     <!-- ============ FOURTH YEAR - ENG 404 ============ -->
@@ -3506,6 +3845,12 @@
             <li>One of many poems addressed to Maud Gonne — Yeats proposed to her at least four times.</li>
             <li>Helen of Troy is the implicit comparison — Gonne is a destructive beauty born out of her time.</li>
             <li>The poem condenses a lifetime of frustrated love into 12 lines.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/49772/no-second-troy" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>About Maud Gonne, the Irish revolutionary Yeats loved unrequitedly for nearly 30 years; she rejected his proposals four times.</li>
+            <li>Compares Gonne to Helen of Troy — a beauty fated to bring ruin.</li>
+            <li>Published in <em>The Green Helmet and Other Poems</em> (1910).</li>
         </ul>
     </div>
 
@@ -3561,6 +3906,8 @@
             <li>The opening poem of Yeats's volume <em>The Tower</em> (1928).</li>
             <li>The first line inspired the title of Cormac McCarthy's <em>No Country for Old Men</em>.</li>
             <li>Companion poem "Byzantium" followed in 1930.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/43291/sailing-to-byzantium" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
         </ul>
     </div>
 
@@ -3600,6 +3947,12 @@
             <li>Written in the aftermath of WWI and the Irish Easter Rising.</li>
             <li>Chinua Achebe took the title <em>Things Fall Apart</em> from line 3.</li>
             <li>Phrases from it ("the centre cannot hold," "rough beast") have become 20th-century touchstones.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/43290/the-second-coming" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Written in January 1919, against the backdrop of the 1918 influenza pandemic (which struck Yeats's pregnant wife Georgie), the Bolshevik Revolution, and the Anglo-Irish War.</li>
+            <li>The phrase "the centre cannot hold" gave Chinua Achebe the title <em>Things Fall Apart</em> (1958); Joan Didion borrowed "Slouches towards Bethlehem" (1968).</li>
+            <li>First published in <em>The Dial</em>, November 1920.</li>
         </ul>
     </div>
 
@@ -3651,6 +4004,8 @@
             <li>Anne Yeats grew up to become a noted painter and stage designer.</li>
             <li>Written at Thoor Ballylee, Yeats's Galway tower.</li>
             <li>Pairs thematically with "The Second Coming" — private hope vs. public despair.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poetrymagazine/poems/14635/a-prayer-for-my-daughter" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
         </ul>
     </div>
 
@@ -3685,6 +4040,12 @@
             <li>Originally drafted as a political poem about the founding of nations through violence.</li>
             <li>Uses the Petrarchan sonnet form to compress an entire historical cycle into 14 lines.</li>
             <li>The final question — did Leda gain any of Zeus's knowledge? — remains hauntingly open.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/43292/leda-and-the-swan" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Originally commissioned for a political journal as a poem on the Russian Revolution; Yeats's mythological treatment was so erotic the editor refused it.</li>
+            <li>Petrarchan sonnet — but with a Shakespearean shift in line 9.</li>
+            <li>First published in <em>The Dial</em>, June 1924.</li>
         </ul>
     </div>
 
@@ -3730,6 +4091,12 @@
             <li>Yeats delayed publication for years out of political caution.</li>
             <li>The rebels included John MacBride, Maud Gonne's estranged husband.</li>
             <li>"A terrible beauty" has entered political vocabulary worldwide.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/43289/easter-1916" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Composed between May and September 1916, in response to the Easter Rising in Dublin (24–29 April 1916).</li>
+            <li>The four men named in the closing list — MacDonagh, MacBride, Connolly, Pearse — were all executed by the British in May 1916. MacBride was the estranged husband of Maud Gonne.</li>
+            <li>The repeated refrain "A terrible beauty is born" is among the most quoted lines in 20th-century poetry.</li>
         </ul>
     </div>
 
@@ -3868,6 +4235,12 @@
             <li>Written during Auden's December 1938 visit to Brussels.</li>
             <li>The Brueghel painting's authorship is now disputed — it may be a copy.</li>
             <li>The poem's cool, observational tone mirrors its theme: suffering is ignored by those not directly affected.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/159364/musee-des-beaux-arts-63a1efde036cd" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Written in Brussels in December 1938 after Auden visited the Royal Museums of Fine Arts of Belgium.</li>
+            <li>Centres on Pieter Bruegel the Elder's <em>Landscape with the Fall of Icarus</em> (c. 1560) — though scholars now believe that painting is a copy after Bruegel.</li>
+            <li>The poem's argument — that human suffering takes place "while someone else is eating or opening a window" — became a touchstone for William Carlos Williams's "Landscape with the Fall of Icarus" (1962).</li>
         </ul>
     </div>
 
@@ -3877,6 +4250,9 @@
         <div class="meta-line">W. H. Auden (1939) — also listed in First Year. See full text above under Eng 103.</div>
         <p><strong>Synopsis:</strong> Three-part elegy on Yeats's death; the second section contains the famous claim that poetry "makes nothing happen."</p>
         <p><span class="themes">Themes:</span> poetry, history, mortality, the role of the poet.</p>
+        <ul class="facts-list">
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/161870/in-memory-of-w-b-yeats" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        </ul>
     </div>
 
     <!-- 11. The Shield of Achilles -->
@@ -3918,10 +4294,14 @@
             <li>Alludes to <em>Iliad</em>, Book XVIII — where Homer describes a shield of heroic scenes.</li>
             <li>Auden replaces Homer's heroic imagery with the bleak landscapes of total war.</li>
             <li>Full text: <a href="https://www.poetryfoundation.org/poems/46555/the-shield-of-achilles" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Written in 1952; Auden won the National Book Award in 1956 for the volume of the same name.</li>
+            <li>Replaces Homer's idyllic shield-imagery with the bleak landscapes of total war — barbed wire, anonymous executions, a child throwing stones.</li>
+            <li>The female figure who watches Hephaestus forge the shield is Thetis, Achilles' sea-nymph mother.</li>
         </ul>
     </div>
 
-    <a href="#toc" class="back-to-top">↑ Back to Top</a>
+    <a href="#toc" class="section-top-link">↑ Back to top</a>
     <div class="divider">❦</div>
 
     <!-- ============ MA - ENG 501 ============ -->
@@ -3954,6 +4334,8 @@
             <li>The first of seventeen so-called "procreation sonnets" (1–17).</li>
             <li>Sets up the entire Fair Youth sequence.</li>
             <li>Opens the 1609 quarto published by Thomas Thorpe.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/50643/sonnet-1-from-fairest-creatures-we-desire-increase" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
         </ul>
     </div>
 
@@ -3983,6 +4365,8 @@
             <li>Uses the metaphor of a printing seal — a cutting-edge technology in Shakespeare's day.</li>
             <li>Argues for procreation as a moral duty.</li>
             <li>Part of the early procreation cluster.</li>
+        
+            <li>Full text: <a href="https://poets.org/poem/fast-thou-shalt-wane-so-fast-thou-growest-sonnet-11" target="_blank" rel="noopener" class="external-link">→ Read at Poets.org</a></li>
         </ul>
     </div>
 
@@ -4012,6 +4396,12 @@
             <li>Addressed to the young man, not a romantic mistress.</li>
             <li>The final couplet is one of the most famous assertions of poetic immortality ever written.</li>
             <li>The most quoted single sonnet in the English language.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/45087/sonnet-18-shall-i-compare-thee-to-a-summers-day" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Probably written in the early 1590s; first printed in the unauthorised 1609 Quarto.</li>
+            <li>Belongs to the 17 "procreation sonnets" (1–17) immediately followed by the volta into immortalising verse — Sonnet 18 is the hinge.</li>
+            <li>"The eye of heaven" (line 5) is one of the most-quoted Shakespeare phrases; "darling buds of May" gave the title to H. E. Bates's novella series and ITV drama.</li>
         </ul>
     </div>
 
@@ -4041,6 +4431,8 @@
             <li>Pairs thematically with Sonnet 58.</li>
             <li>Plays on the courtly cliché of love-as-bondage, but with an undercurrent of bitter irony.</li>
             <li>Reveals the speaker's ambivalent humiliation.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/50388/sonnet-57-being-your-slave-what-should-i-do-but-tend" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
         </ul>
     </div>
 
@@ -4070,6 +4462,8 @@
             <li>Uses the rose-and-canker image central to the sonnet sequence.</li>
             <li>Closes with a warning that the sharpest knife misused loses its edge.</li>
             <li>Part of the cluster warning the young man about his reputation.</li>
+        
+            <li>Full text: <a href="https://www.folger.edu/explore/shakespeares-works/shakespeares-sonnets/read/95/" target="_blank" rel="noopener" class="external-link">→ Read at Folger Shakespeare Library</a></li>
         </ul>
     </div>
 
@@ -4077,6 +4471,9 @@
         <h3>6. Sonnet 104 — "To me, fair friend, you never can be old"</h3>
         <div class="meta-line">William Shakespeare (1609) — also prescribed in First Year. See full text above.</div>
         <p><span class="themes">Themes:</span> time, beauty, mutability.</p>
+        <ul class="facts-list">
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/50387/sonnet-104-to-me-fair-friend-you-never-can-be-old" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        </ul>
     </div>
 
     <div class="poem-card">
@@ -4105,6 +4502,14 @@
             <li>A standard wedding reading worldwide.</li>
             <li>Quoted in Jane Austen's <em>Sense and Sensibility</em>.</li>
             <li>The final couplet stakes everything on the truth of the definition — a rhetorical gamble of magnificent audacity.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/45106/sonnet-116-let-me-not-to-the-marriage-of-true-minds" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Used at countless Anglican wedding services since the 19th century.</li>
+            <li>Recited by Kate Winslet's character in the 1995 film <em>Sense and Sensibility</em>.</li>
+            <li>The "ever-fixèd mark" / "star to every wandering bark" image draws on Elizabethan navigation by polar star.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/50387/sonnet-104-to-me-fair-friend-you-never-can-be-old" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
         </ul>
     </div>
 
@@ -4134,10 +4539,16 @@
             <li>A landmark anti-blazon, mocking the conventions of Renaissance love poetry.</li>
             <li>Belongs to the Dark Lady sequence (127–152).</li>
             <li>Closes with a defiant assertion of honest love over flattering falsehood.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/45108/sonnet-130-my-mistress-eyes-are-nothing-like-the-sun" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>A parody of the Petrarchan blazon: where Petrarch piles flattering metaphors, Shakespeare strips them away.</li>
+            <li>Belongs to the "Dark Lady" sequence (sonnets 127–152), the most teasing identification puzzle in English literature.</li>
+            <li>Critics from Stephen Booth to Helen Vendler regard the closing couplet as one of the warmest love declarations in the sonnet form.</li>
         </ul>
     </div>
 
-    <a href="#toc" class="back-to-top">↑ Back to Top</a>
+    <a href="#toc" class="section-top-link">↑ Back to top</a>
     <div class="divider">◆</div>
 
     <!-- ============ MA - ENG 502 ============ -->
@@ -4170,6 +4581,8 @@
             <li>One of four "Spleen" poems in the cycle "Spleen et Idéal."</li>
             <li>Coined a French sense of modern melancholy — "spleen" became Baudelaire's signature term.</li>
             <li>"Spleen" was Baudelaire's word for the heavy, listless mood of modernity.</li>
+        
+            <li>Full text: <a href="https://fleursdumal.org/poem/159" target="_blank" rel="noopener" class="external-link">→ Read (FR/EN parallel) at fleursdumal.org</a></li>
         </ul>
     </div>
 
@@ -4209,6 +4622,8 @@
             <li>Often quoted as the definitive image of clinical melancholy.</li>
             <li>Builds through a cascade of "When" clauses — an anaphoric structure that mimics the weight of depression.</li>
             <li>Ends with a funeral procession passing through the soul.</li>
+        
+            <li>Full text: <a href="https://fleursdumal.org/poem/161" target="_blank" rel="noopener" class="external-link">→ Read (FR/EN parallel) at fleursdumal.org</a></li>
         </ul>
     </div>
 
@@ -4240,6 +4655,12 @@
             <li>A foundational manifesto of French Symbolism.</li>
             <li>Influenced Rimbaud's theory of the senses and Mallarmé's poetics.</li>
             <li>Synesthesia became a guiding principle for symbolist art.</li>
+        
+            <li>Full text: <a href="https://fleursdumal.org/poem/103" target="_blank" rel="noopener" class="external-link">→ Read (FR/EN parallel) at fleursdumal.org</a></li>
+        
+            <li>The four-line opening — "La Nature est un temple où de vivants piliers…" — became the founding manifesto of French Symbolism.</li>
+            <li>Directly inspired Verlaine, Mallarmé, Rimbaud, and indirectly the entire modernist movement from Yeats to Eliot.</li>
+            <li>Built on the doctrine of <em>synesthésie</em>: "Perfumes, colours, sounds answer one another."</li>
         </ul>
     </div>
 
@@ -4274,6 +4695,12 @@
             <li>One of Baudelaire's most beloved parables of the artist.</li>
             <li>Inspired by Baudelaire's sea voyage as a young man to the Indian Ocean.</li>
             <li>The closing image of clipped wings is one of the most iconic representations of the artist's plight.</li>
+        
+            <li>Full text: <a href="https://fleursdumal.org/poem/200" target="_blank" rel="noopener" class="external-link">→ Read (FR/EN parallel) at fleursdumal.org</a></li>
+        
+            <li>Drafted as early as 1841–42 during Baudelaire's voyage to the Indian Ocean (Mauritius and Réunion).</li>
+            <li>Added to the second edition of <em>Les Fleurs du mal</em> (1861) as the second poem of "Spleen et Idéal."</li>
+            <li>The most famous metaphor in French poetry for the artist's awkward grandeur: "Ses ailes de géant l'empêchent de marcher" — "his giant's wings prevent him from walking."</li>
         </ul>
     </div>
 
@@ -4297,6 +4724,8 @@
             <li>Reflects Baudelaire's vexed relationships with Jeanne Duval and Apollonie Sabatier.</li>
             <li>Part of the "Black Venus" cluster — poems of attraction and revulsion.</li>
             <li>Showcases Baudelaire's characteristic mix of desire and disgust.</li>
+        
+            <li>Full text: <a href="https://fleursdumal.org/poem/122" target="_blank" rel="noopener" class="external-link">→ Read (FR/EN parallel) at fleursdumal.org</a></li>
         </ul>
     </div>
 
@@ -4329,6 +4758,8 @@
             <li>Baudelaire wrote three poems titled "Le Chat" — cats permeate his imagery.</li>
             <li>Cats function as surrogates of the beloved, blending the sensual and the mysterious.</li>
             <li>His own cat was a famous fixture of his Paris apartment.</li>
+        
+            <li>Full text: <a href="https://fleursdumal.org/poem/132" target="_blank" rel="noopener" class="external-link">→ Read (FR/EN parallel) at fleursdumal.org</a></li>
         </ul>
     </div>
 
@@ -4357,6 +4788,8 @@
             <li>Belongs to the "Idéal" rather than "Spleen" half of the cycle.</li>
             <li>Inspired by Apollonie Sabatier, a salon hostess Baudelaire admired from afar.</li>
             <li>Treats erotic devotion in religious imagery — a hallmark of Baudelaire's style.</li>
+        
+            <li>Full text: <a href="https://fleursdumal.org/poem/137" target="_blank" rel="noopener" class="external-link">→ Read (FR/EN parallel) at fleursdumal.org</a></li>
         </ul>
     </div>
 
@@ -4388,6 +4821,8 @@
             <li>Written during Baudelaire's voyage to the Indian Ocean in 1841.</li>
             <li>Among his earliest published poems.</li>
             <li>Addressed to Madame Autard de Bragard of Mauritius.</li>
+        
+            <li>Full text: <a href="https://fleursdumal.org/poem/153" target="_blank" rel="noopener" class="external-link">→ Read (FR/EN parallel) at fleursdumal.org</a></li>
         </ul>
     </div>
 
@@ -4417,6 +4852,8 @@
             <li>From the "Spleen et Idéal" section.</li>
             <li>Compresses Gothic graveyard verse into the sonnet form.</li>
             <li>Uses cold and shadow as its presiding images — a poem of chilling intimacy.</li>
+        
+            <li>Full text: <a href="https://fleursdumal.org/poem/171" target="_blank" rel="noopener" class="external-link">→ Read (FR/EN parallel) at fleursdumal.org</a></li>
         </ul>
     </div>
 
@@ -4449,10 +4886,12 @@
             <li>Among the poems condemned in the 1857 obscenity trial of <em>Les Fleurs du Mal</em>.</li>
             <li>Six poems were banned in France until 1949.</li>
             <li>Embraces decomposition as relief rather than horror — a radical materialist stance.</li>
+        
+            <li>Full text: <a href="https://allpoetry.com/poem/8506081-Le-Mort-Joyeux--The-Joyful-Corpse--by-Charles-Baudelaire" target="_blank" rel="noopener" class="external-link">→ Read FR/EN at AllPoetry</a></li>
         </ul>
     </div>
 
-    <a href="#toc" class="back-to-top">↑ Back to Top</a>
+    <a href="#toc" class="section-top-link">↑ Back to top</a>
     <div class="divider">◆</div>
 
     <!-- ============ MA - ENG 504(A) ============ -->
@@ -4500,6 +4939,10 @@
             <li>Whitman set the type for the first edition himself.</li>
             <li>Transformed American poetry by liberating it from European meters.</li>
             <li>Full text: <a href="https://www.poetryfoundation.org/poems/45477/song-of-myself-1892-version" target="_blank" rel="noopener" class="external-link">→ Read complete poem at Poetry Foundation</a></li>
+        
+            <li>First published anonymously and untitled in <em>Leaves of Grass</em> (1855); Whitman set the type himself.</li>
+            <li>Grew across nine lifetime editions to its final 52-section, 1,346-line form (1881).</li>
+            <li>Whitman sent the first edition to Emerson, who called it "the most extraordinary piece of wit and wisdom that America has yet contributed."</li>
         </ul>
     </div>
 
@@ -4546,6 +4989,12 @@
             <li>Numbered 479 in Franklin's edition of the poems.</li>
             <li>Dickinson published only about ten poems in her lifetime — this was not one of them.</li>
             <li>The carriage allegory is a hallmark of her metaphysical wit.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/47652/because-i-could-not-stop-for-death-479" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Numbered 479 in R. W. Franklin's edition; only one of the 1,789 poems Dickinson left at her death was published in her lifetime with her consent.</li>
+            <li>Common-meter (alternating tetrameter and trimeter) — the metre of Protestant hymns and English ballads.</li>
+            <li>Posthumously edited and altered by Mabel Loomis Todd in 1890; the original text was not restored until Thomas H. Johnson's 1955 edition.</li>
         </ul>
     </div>
 
@@ -4570,6 +5019,8 @@
             <li>One of Dickinson's earliest mature lyrics.</li>
             <li>Combines economic and theological vocabularies — a daring fusion.</li>
             <li>The triple epithet "Burglar! Banker—Father!" expresses both reverence and reproach toward God.</li>
+        
+            <li>Full text: <a href="https://en.wikisource.org/wiki/I_never_lost_as_much_but_twice" target="_blank" rel="noopener" class="external-link">→ Read at Wikisource</a></li>
         </ul>
     </div>
 
@@ -4592,6 +5043,8 @@
             <li>A compressed meditation in Dickinson's hymn-meter.</li>
             <li>Possibly addressed to a deceased friend or family member.</li>
             <li>Reflects her lifelong dialogue with mortality and the limits of death.</li>
+        
+            <li>Full text: <a href="https://en.wikisource.org/wiki/Unable_are_the_Loved_to_die" target="_blank" rel="noopener" class="external-link">→ Read at Wikisource</a></li>
         </ul>
     </div>
 
@@ -4616,6 +5069,8 @@
             <li>Now, ironically, one of her most famous poems.</li>
             <li>Reflects her lifelong reclusiveness in Amherst, Massachusetts.</li>
             <li>A favorite for school anthologies — its humor and defiance are irresistible.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/1647321/im-nobody-who-are-you" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
         </ul>
     </div>
 
@@ -4646,6 +5101,8 @@
             <li>Often paired with "I felt a Funeral, in my Brain" as Dickinson's great poems of psychological extremity.</li>
             <li>Anticipates 20th-century writing on shock and trauma by decades.</li>
             <li>Compresses the stages of grief into three brilliant stanzas.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/47651/after-great-pain-a-formal-feeling-comes-372" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
         </ul>
     </div>
 
@@ -4675,6 +5132,8 @@
             <li>One of the few poems published anonymously in her lifetime (1864, in the <em>Brooklyn Daily Union</em>).</li>
             <li>A characteristic Dickinson paradox in three quatrains.</li>
             <li>The dying soldier who understands victory best is one of her most memorable images.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/45721/success-is-counted-sweetest-112" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
         </ul>
     </div>
 
@@ -4704,6 +5163,8 @@
             <li>Uses the rhetoric of formal logic to undermine certainty — each stanza ends with a refrain of doubt.</li>
             <li>An early example of her dry, ironic theology.</li>
             <li>The repeated "But, what of that?" is a masterstroke of understated skepticism.</li>
+        
+            <li>Full text: <a href="https://en.wikisource.org/wiki/I_reason,_Earth_is_short_%E2%80%94" target="_blank" rel="noopener" class="external-link">→ Read at Wikisource</a></li>
         </ul>
     </div>
 
@@ -4741,6 +5202,8 @@
             <li>Opening poem of Frost's collection <em>North of Boston</em>.</li>
             <li>The proverb "Good fences make good neighbours" is the neighbor's, not the speaker's — Frost is often misread as endorsing it.</li>
             <li>Frost often read it at public events with deadpan humor.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/44266/mending-wall" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
         </ul>
     </div>
 
@@ -4779,6 +5242,12 @@
             <li>Written as a gentle joke about Edward Thomas's indecisive walks.</li>
             <li>Often misread as a triumphant individualist anthem — Frost himself called it "a tricky poem."</li>
             <li>Among the most famously misread poems in American literature.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/44272/the-road-not-taken" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Famously misread as a celebration of individualism; Frost said it was a gentle joke at the expense of his friend Edward Thomas, who agonised over country walks.</li>
+            <li>Thomas joined the British army partly in response to the poem and was killed at Arras in April 1917.</li>
+            <li>Ranked the most-misunderstood poem in American literature in a 2015 study by literary critic David Orr.</li>
         </ul>
     </div>
 
@@ -4861,6 +5330,8 @@
             <li>Closes the volume <em>North of Boston</em>.</li>
             <li>Influenced Seamus Heaney's harvest poems.</li>
             <li>Uses irregular line lengths to mimic the rhythms of exhaustion.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/44259/after-apple-picking" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
         </ul>
     </div>
 
@@ -4899,6 +5370,12 @@
             <li>From the collection <em>Mountain Interval</em>.</li>
             <li>"Earth's the right place for love" is one of Frost's most quoted affirmations.</li>
             <li>Often read alongside "After Apple-Picking" as a meditation on labor and play.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/44260/birches" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        
+            <li>Composed during Frost's 1913–15 stay in England, when he became close friends with Edward Thomas.</li>
+            <li>First published in <em>The Atlantic Monthly</em> (August 1915).</li>
+            <li>The closing line — "One could do worse than be a swinger of birches" — has been quoted in U.S. presidential speeches and a Grateful Dead song.</li>
         </ul>
     </div>
 
@@ -4948,6 +5425,8 @@
             <li>From <em>A Boy's Will</em>, Frost's first collection.</li>
             <li>A sonnet in disguise, with irregular rhyme but a clear 14-line structure.</li>
             <li>"The fact is the sweetest dream that labor knows" encapsulates Frost's poetics.</li>
+        
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/53001/mowing-56d231eca88cd" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
         </ul>
     </div>
 
@@ -4955,9 +5434,12 @@
         <h3>16. Stopping by Woods on a Snowy Evening</h3>
         <div class="meta-line">Robert Frost (1923) — also listed in First Year. See full text above.</div>
         <p><span class="themes">Themes:</span> duty vs. desire, mortality, beauty.</p>
+        <ul class="facts-list">
+            <li>Full text: <a href="https://www.poetryfoundation.org/poems/42891/stopping-by-woods-on-a-snowy-evening" target="_blank" rel="noopener" class="external-link">→ Read at Poetry Foundation</a></li>
+        </ul>
     </div>
 
-    <a href="#toc" class="back-to-top">↑ Back to Top</a>
+    <a href="#toc" class="section-top-link">↑ Back to top</a>
     <div class="divider">◆</div>
 
     <!-- ============ MA - ENG 504(B) ============ -->
@@ -4994,6 +5476,10 @@
             <li>Considered Chaucer's most artful tale — a masterpiece of comic rhetoric.</li>
             <li>Satirizes scholastic learning and rhetorical excess.</li>
             <li>Full text: <a href="https://www.gutenberg.org/ebooks/2383" target="_blank" rel="noopener" class="external-link">→ Read at Project Gutenberg</a></li>
+        
+            <li>A mock-heroic beast fable inside the larger frame of <em>The Canterbury Tales</em> (composed c. 1387–1400).</li>
+            <li>Chauntecleer, the rooster, has seven hens — including his favourite, Pertelote.</li>
+            <li>Source: a Middle French <em>Roman de Renart</em> branch, refined and Englished by Chaucer with reference to Boethius and the medieval dream-vision tradition.</li>
         </ul>
     </div>
 
@@ -5023,6 +5509,10 @@
             <li>1,212 lines in a strict 12-line stanza using both alliteration and rhyme — a staggering formal achievement.</li>
             <li>The "Pearl-poet" remains anonymous but is conjectured to have written all four poems in the manuscript.</li>
             <li>Full text: <a href="https://www.gutenberg.org/ebooks/1322" target="_blank" rel="noopener" class="external-link">→ Read at Project Gutenberg</a></li>
+        
+            <li>Survives in a single late-14th-century manuscript (British Library MS Cotton Nero A.x), alongside <em>Sir Gawain and the Green Knight</em>, <em>Patience</em>, and <em>Cleanness</em>.</li>
+            <li>1,212 lines — a numerologically perfect number (12 × 101).</li>
+            <li>Believed by many scholars to be an elegy for the Pearl-Poet's two-year-old daughter.</li>
         </ul>
     </div>
 
@@ -5054,6 +5544,10 @@
             <li>Orpheus is recast as an English king ruling in Winchester (called "Thrace" in the poem).</li>
             <li>J. R. R. Tolkien produced a celebrated modern English translation.</li>
             <li>Full text: <a href="https://www.gutenberg.org/ebooks/14568" target="_blank" rel="noopener" class="external-link">→ Read at Project Gutenberg</a></li>
+        
+            <li>An English Breton lay (c. 1300), 604 lines in rhymed couplets.</li>
+            <li>Recasts the Greek Orpheus myth with a happy ending — Orfeo wins Heurodis back from the Fairy King and reigns again at Winchester.</li>
+            <li>J. R. R. Tolkien produced a celebrated Modern English verse translation, published posthumously in 1975.</li>
         </ul>
     </div>
 
@@ -5062,10 +5556,13 @@
         <div class="meta-line">Geoffrey Chaucer (c. 1387) — also prescribed in Eng 304. See entry above.</div>
         <p><strong>Synopsis:</strong> A spring pilgrimage from London to Canterbury; the narrator meets twenty-nine pilgrims at the Tabard Inn and describes each in vivid social portrait.</p>
         <p><span class="themes">Themes:</span> pilgrimage, social satire, estates, the human comedy.</p>
-        <p><strong>Note:</strong> Full excerpt and link provided under Eng 304 above.</p>
+        <ul class="facts-list">
+            <li>Full text: <a href="https://www.gutenberg.org/ebooks/2383" target="_blank" rel="noopener" class="external-link">→ Read complete <em>Canterbury Tales</em> at Project Gutenberg</a></li>
+            <li>Manuscript &amp; modernization: <a href="https://chaucer.fas.harvard.edu/pages/general-prologue-0" target="_blank" rel="noopener" class="external-link">→ Harvard's Geoffrey Chaucer page (Middle English + translation)</a></li>
+        </ul>
     </div>
 
-    <a href="#toc" class="back-to-top">↑ Back to Top</a>
+    <a href="#toc" class="section-top-link">↑ Back to top</a>
     <div class="divider">❦</div>
 
     <!-- CLOSING -->
@@ -5096,5 +5593,25 @@
             });
         })();
     </script>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+    <script>
+      (function () {
+        var btt = document.getElementById('backToTop');
+        if (!btt) return;
+        var ticking = false;
+        function update() {
+          if (window.scrollY > 400) btt.classList.add('visible');
+          else btt.classList.remove('visible');
+          ticking = false;
+        }
+        window.addEventListener('scroll', function () {
+          if (!ticking) { window.requestAnimationFrame(update); ticking = true; }
+        }, { passive: true });
+        btt.addEventListener('click', function () {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      })();
+    </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
